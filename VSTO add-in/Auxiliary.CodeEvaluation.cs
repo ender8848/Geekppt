@@ -189,6 +189,12 @@ namespace CodeEvaluation
             return result;
         }
 
+        // x, y are the coordinates relative to the upper left corner of the slide, height is the height of the picture, and width is the width of the picture.
+        public static void AddPicture(String file_path, Microsoft.Office.Interop.PowerPoint.Slide slide, float x = 0, float y = 0, float height = 250, float width = 250)
+        {
+            slide.Shapes.AddPicture(file_path, Microsoft.Office.Core.MsoTriState.msoFalse, Microsoft.Office.Core.MsoTriState.msoTrue, x, y, height, width);
+        }
+
     }
 
     public interface ICodeEvaluation
