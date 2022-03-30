@@ -5,19 +5,46 @@ on: [push]
 jobs:
 
   build:
+
+    strategy:
+      matrix:
+        configuration: [Debug, Release]
+
     runs-on: windows-latest
+
     steps:
-    - uses: actions/checkout@v2
-    - name: Setup dotnet
+    - name: Checkout
+      uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+
+    # install .NET Core
+    - name: Install .NET Core
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: '3.1.x'
-    - name: Install dependencies
-      run: dotnet restore
+        dotnet-version: 3.1.202
+
+    # install MSBuild.exe : https://github.com/microsoft/setup-msbuild
+    - name: Add msbuild to PATH
+      uses: microsoft/setup-msbuild@v1.0.2
+
+    # install NuGet
+    - name: Setup NuGet
+      uses: nuget/setup-nuget@v1
+      with:
+        nuget-api-key: ${{ secrets.NuGetAPIKey }}
+        nuget-version: '5.x'
+
+    # build
+    - name: Build the solution
+      run: msbuild /p:Configuration=$env:Configuration -restore
       working-directory: CodeEvaluationTest/
-    - name: Build
-      run: dotnet build
+      env:
+        Configuration: ${{ matrix.configuration }}
+
+    # test
+    - name: Execute unit tests
+      run: dotnet test -c $env:Configuration
       working-directory: CodeEvaluationTest/
-    - name: Test with the dotnet CLI
-      run: dotnet test
-      working-directory: CodeEvaluationTest/
+      env:
+        Configuration: ${{ matrix.configuration }}
