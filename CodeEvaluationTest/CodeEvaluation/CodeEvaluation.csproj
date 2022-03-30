@@ -234,6 +234,9 @@
   <PropertyGroup>
     <ManifestCertificateThumbprint>56FDAFC2C4721E4F180920092F0220299E6D63CE</ManifestCertificateThumbprint>
   </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
   <!-- Include the build rules for a C# project. -->
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- Include additional build rules for an Office application add-in. -->
