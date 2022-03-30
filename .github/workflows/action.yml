@@ -1,4 +1,4 @@
-name: .NET Build & Test
+name: NET Build & Test
 
 on:
   push:
@@ -7,46 +7,21 @@ on:
     branches: [ master ]
 
 jobs:
-
   build:
-
     strategy:
       matrix:
         configuration: [Debug, Release]
-
     runs-on: windows-latest
-
     steps:
-    - name: Checkout
-      uses: actions/checkout@v2
-      with:
-        fetch-depth: 0
-
-    # install .NET Core
-    - name: Install .NET Core
-      uses: actions/setup-dotnet@v1
-      with:
-        dotnet-version: 3.1.202
-
-    # add MSBuild.exe 
-    - name: Add msbuild to PATH
-      uses: microsoft/setup-msbuild@v1.0.2
-
-    # install NuGet
-    - name: Setup NuGet
-      uses: nuget/setup-nuget@v1
-      with:
-        nuget-api-key: ${{ secrets.NuGetAPIKey }}
-        nuget-version: '5.x'
-
-    # build the project
-    - name: Build the solution
-      run: msbuild /p:Configuration=$env:Configuration -restore
-      env:
-        Configuration: ${{ matrix.configuration }}
-
-    # take the unit test
-    - name: Execute unit tests
-      run: dotnet test -c $env:Configuration
-      env:
-        Configuration: ${{ matrix.configuration }}
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup
+        uses: actions/setup-dotnet@v1
+      - name: Build
+        run: dotnet build --configuration $env:Configuration
+        env:
+          Configuration: ${{ matrix.configuration }}
+      - name: Test
+        run: dotnet test --configuration $env:Configuration
+        env:
+          Configuration: ${{ matrix.configuration }}
