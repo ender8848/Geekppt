@@ -81,18 +81,18 @@ fabric.properties
 !.vscode/extensions.json
 
 # visual studio =============================
-.vs/
-*.sln
-*.vcxproj
-*.vcproj.*.user
+.# vs/
+# *.sln
+# *.vcxproj
+# *.vcproj.*.user
 # User-specific files
-*.rsuser
-*.suo
-*.user
-*.userosscache
-*.sln.docstates
-x64/
-x86/
+# *.rsuser
+# *.suo
+# *.user
+# *.userosscache
+# *.sln.docstates
+# x64/
+# x86/
 
 # C++ ================================
  Prerequisites
