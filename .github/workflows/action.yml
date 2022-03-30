@@ -5,7 +5,11 @@ on: [push]
 jobs:
 
   build:
-  
+
+    strategy:
+      matrix:
+        configuration: [Debug, Release]
+
     runs-on: windows-latest
 
     steps:
@@ -30,18 +34,15 @@ jobs:
       with:
         nuget-api-key: ${{ secrets.NuGetAPIKey }}
         nuget-version: '5.x'
-    
-    #install dependencies
-    - name: Install dependencies
-      run: dotnet restore
-      working-directory: CodeEvaluationTest/
 
     # build
     - name: Build the solution
-      run: dotnet build
-      working-directory: CodeEvaluationTest/
+      run: msbuild /p:Configuration=$env:Configuration -restore
+      env:
+        Configuration: ${{ matrix.configuration }}
 
-    # test
+    # unit test
     - name: Execute unit tests
-      run: dotnet test
-      working-directory: CodeEvaluationTest/
+      run: dotnet test -c $env:Configuration
+      env:
+        Configuration: ${{ matrix.configuration }}
