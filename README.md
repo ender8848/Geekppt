@@ -70,7 +70,7 @@ TBI by WZF
 
 ## Technical Documentation
 
-For full documentation for the PowerPoint add-in, please go to https://luowx0905.github.io/html/index.html
+For full documentation for the PowerPoint add-in, please go to [Code Evaluation: Geekppt (luowx0905.github.io)](https://luowx0905.github.io/CodeEvaluation_doc/index.html)
 
 ## License
 
