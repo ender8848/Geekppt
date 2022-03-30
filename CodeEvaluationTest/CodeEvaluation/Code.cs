@@ -151,7 +151,6 @@ namespace CodeEvaluation
             List<PowerPoint.Shape> shapes = new List<PowerPoint.Shape>();
             string color = Auxiliary.GenerateColor();
             
-
             try
             {
                 // obtain all the selected textboxes   
@@ -300,38 +299,52 @@ namespace CodeEvaluation
 
         private void ChangeName_TextChanged(object sender, RibbonControlEventArgs e)
         {
-            string name = this.ChangeName.Text;
-            foreach (PowerPoint.Shape shape in Globals.ThisAddIn.Application.ActiveWindow.Selection.ShapeRange)
+            try
             {
-                shape.Name = name;
-                if (shape.HasTable == Office.MsoTriState.msoTrue)
+                string name = this.ChangeName.Text;
+                foreach (PowerPoint.Shape shape in Globals.ThisAddIn.Application.ActiveWindow.Selection.ShapeRange)
                 {
-                    shape.Table.Cell(1, 1).Shape.TextFrame.TextRange.Text = name;
+                    shape.Name = name;
+                    if (shape.HasTable == Office.MsoTriState.msoTrue)
+                    {
+                        shape.Table.Cell(1, 1).Shape.TextFrame.TextRange.Text = name;
+                    }
                 }
+            }
+            catch (System.Runtime.InteropServices.COMException exception)
+            {
+                Console.WriteLine(exception.ToString());
             }
         }
 
-        private void button1_Click(object sender, RibbonControlEventArgs e)
+        private void PlotTemplate_Clicked(object sender, RibbonControlEventArgs e)
         {
-            foreach (PowerPoint.Shape shape in Globals.ThisAddIn.Application.ActiveWindow.Selection.ShapeRange)
+            try
             {
-                if (shape.HasTable == Office.MsoTriState.msoTrue)
+                foreach (PowerPoint.Shape shape in Globals.ThisAddIn.Application.ActiveWindow.Selection.ShapeRange)
                 {
-                    string pythonPlotTemplate = "import matplotlib.pyplot as plt" + System.Environment.NewLine +
-                    "plt.title(\"Scatter Diagram\")" + System.Environment.NewLine +
-                "plt.xlabel(\"Horizontal Axis\")" + System.Environment.NewLine +
-                "plt.ylabel(\"Vertical Axis\")" + System.Environment.NewLine +
-                "plt.plot(" + shape.Name + "[0]," + shape.Name + "[1],'bo')" + System.Environment.NewLine + System.Environment.NewLine +
-                "### if you need" + System.Environment.NewLine +
-                "# plt.xlim(xmax=???,xmin=???)" + System.Environment.NewLine +
-                "# plt.ylim(ymax=???,ymin=???)" + System.Environment.NewLine +
-                "# plt.annotate(\"???\", xy = ???, xytext = ???, arrowprops = dict(facecolor = 'black', shrink = 0.1))" + System.Environment.NewLine +
-                "plt.show()";
-                    PowerPoint.Slide slide = (PowerPoint.Slide)Globals.ThisAddIn.Application.ActiveWindow.View.Slide;
-                    PowerPoint.Shape textBox = AddTextBox(slide, "Arial", 18, "000000", pythonPlotTemplate);
-                    BoxContent content = BoxContent.Code;
-                    textBox.Name = Auxiliary.GenerateCodeBoxName("python", content);
+                    if (shape.HasTable == Office.MsoTriState.msoTrue)
+                    {
+                        string pythonPlotTemplate = "import matplotlib.pyplot as plt" + System.Environment.NewLine +
+                        "plt.title(\"Scatter Diagram\")" + System.Environment.NewLine +
+                    "plt.xlabel(\"Horizontal Axis\")" + System.Environment.NewLine +
+                    "plt.ylabel(\"Vertical Axis\")" + System.Environment.NewLine +
+                    "plt.plot(" + shape.Name + "[0]," + shape.Name + "[1],'bo')" + System.Environment.NewLine + System.Environment.NewLine +
+                    "### if you need" + System.Environment.NewLine +
+                    "# plt.xlim(xmax=???,xmin=???)" + System.Environment.NewLine +
+                    "# plt.ylim(ymax=???,ymin=???)" + System.Environment.NewLine +
+                    "# plt.annotate(\"???\", xy = ???, xytext = ???, arrowprops = dict(facecolor = 'black', shrink = 0.1))" + System.Environment.NewLine +
+                    "plt.show()";
+                        PowerPoint.Slide slide = (PowerPoint.Slide)Globals.ThisAddIn.Application.ActiveWindow.View.Slide;
+                        PowerPoint.Shape textBox = AddTextBox(slide, "Arial", 18, "000000", pythonPlotTemplate);
+                        BoxContent content = BoxContent.Code;
+                        textBox.Name = Auxiliary.GenerateCodeBoxName("python", content);
+                    }
                 }
+            }
+            catch (System.Runtime.InteropServices.COMException exception)
+            {
+                Console.WriteLine(exception.ToString());
             }
         }
     }

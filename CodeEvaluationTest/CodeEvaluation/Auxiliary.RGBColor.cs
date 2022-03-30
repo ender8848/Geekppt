@@ -7,7 +7,7 @@ using PowerPoint = Microsoft.Office.Interop.PowerPoint;
 
 namespace CodeEvaluation
 {    
-    partial class Auxiliary
+    public partial class Auxiliary
     {        
         private static List<string> colors = new List<string>();
         private const int MINIMUM_COLOR_DIFFERENCE = 100;
@@ -135,8 +135,7 @@ namespace CodeEvaluation
         /// Convert hexadecimal representation into RGB format
         /// </summary>
         /// <param name="color">String representation of the color(hexadecimal)</param>
-        /// <returns>A RGBColor object represents the hexadecimal
-        /// </returns>
+        /// <returns>A RGBColor object represents the hexadecimal</returns>
         public static RGBColor ToRGBColor(string color)
         {
             if (color.Length != 6)

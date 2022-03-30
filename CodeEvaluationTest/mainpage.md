@@ -10,7 +10,7 @@ In this project, we aim to build a ppt addin called ```Code Evaluation``` that h
 
 ## Installation
 
-TBI
+link TBI
 
 ## User Guide
 
@@ -66,7 +66,15 @@ You can then select a parameter table and click the ```Plot Template``` button t
 
 ### Conversion to ppt with codebox enabled
 
-TBI by WZF
+User can firstly use pandoc to convert Markdown file to PowerPoint file. In order to make addin detect certain language type, the users need to add specific tags for different language codebox (@@code_python for python, @@code_java_main & @@code_java for Java, @@code_cpp_main & @@code_cpp for C++). For example, python code should be marked like this in md files.
+ 
+```
+@code_python
+# code content
+@code_python
+```
+
+Then users can use ```Reformat``` button to remove all existing tags(users can also run code without reformating). After clicking the reformat button, users can run code by clicking evaluation button.
 
 ## Technical Documentation
 

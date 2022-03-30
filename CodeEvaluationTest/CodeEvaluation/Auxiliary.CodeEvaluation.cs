@@ -11,7 +11,7 @@ using System.Drawing;
 
 namespace CodeEvaluation
 {
-    enum Language { CPP, Java, Python, Invalid };
+    public enum Language { CPP, Java, Python, Invalid };
 
     /// <summary>
     /// All the auxiliary methods are encapsulated in this class. 
@@ -19,8 +19,17 @@ namespace CodeEvaluation
     /// in PowerPoint, determing the naming of PowerPoint components and evaluating
     /// source codes.
     /// </summary>
-    partial class Auxiliary
+    public partial class Auxiliary
     {
+        /// <summary>
+        /// Generate temporary txt file to store code
+        /// </summary>
+        /// <param name="path">file path</param>
+        /// <param name="code">code content</param>
+        /// <param name="type">Language type, C++ or Python or Java</param>
+        /// <param name="isMain">whether is main file</param>
+        /// <param name="id">random id number</param>
+        /// <returns>filename</returns>
         public static string GenerateTextFile(string path, string code, Language type, bool isMain, int id)
         {
             string filename = path + Path.DirectorySeparatorChar + GenerateFilename(type, isMain, id);
@@ -123,7 +132,7 @@ namespace CodeEvaluation
         }
 
         /// <summary>
-        /// Split the arguments in string format (separate by \n) to a list
+        /// Split the arguments in string format (separate by \\n) to a list
         /// </summary>
         /// <param name="input"></param>
         /// <returns>A list of arguments</returns>
@@ -139,7 +148,13 @@ namespace CodeEvaluation
             return commands;
         }
 
-        public static string GenerateTableInputList(PowerPoint.Shape table, string bracketType)
+        /// <summary>
+        /// Extract content in table and turn into string with certain bracket type
+        /// </summary>
+        /// <param name="table">ppt.shape type table</param>
+        /// <param name="bracketType">"[]" for python, "{}" for others</param>
+        /// <returns>string of table content with certain barcket type</returns>
+        public static string GenerateTableInputList(PowerPoint.Shape table, string bracketType) 
         {
             string inputList = "";
             inputList += bracketType[0];
@@ -179,6 +194,12 @@ namespace CodeEvaluation
             return inputList;
         }
 
+        /// <summary>
+        /// Replace table name in code with actual table content
+        /// </summary>
+        /// <param name="text">code containing table variable name</param>
+        /// <param name="tableInput">dict from table name to table content</param>
+        /// <returns>string of code containing table content</returns>
         public static string ReplaceParametersWithTableInputList(string text, Dictionary<string, string> tableInput)
         {
             foreach (string key in tableInput.Keys)
@@ -348,6 +369,9 @@ namespace CodeEvaluation
             return className;
         }
 
+        /// <summary>
+        /// Create a Java source file base on the all the text files (concatenation)
+        /// </summary>
         public void CreateSourceFile()
         {
             foreach (var address in textAddress)
@@ -366,9 +390,13 @@ namespace CodeEvaluation
 
         }
 
-
-
-
+        /// <summary>
+        /// Run java code
+        /// </summary>
+        /// <param name="result">code terminal output</param>
+        /// <param name="cmdArgs">command line arguments, seperated by space</param>
+        /// <param name="inputs">commandline stream input</param>
+        /// <returns>whether code executation has problem (true or false)</returns>
         public bool RunCode(out string result, string cmdArgs = "", string inputs = "")
         {
             
@@ -401,8 +429,15 @@ namespace CodeEvaluation
             return true;
         }
 
-       
 
+        /// <summary>
+        /// Run Java program
+        /// </summary>
+        /// <param name="executable">The name of the program</param>
+        /// <param name="address_folder">file folder address</param>
+        /// <param name="args">The arguments of this program</param>
+        /// <param name="inputs">The inputs of this program</param>
+        /// <returns>code executation output</returns>
         public static string RunProgramJava(string executable, string address_folder, string args = null, List<string> inputs = null)
         {
             string result = null;
@@ -438,7 +473,12 @@ namespace CodeEvaluation
             result = abstractResult(result, address_folder);
             return result;
         }
-
+        /// <summary>
+        /// Abstract result from code execution output
+        /// </summary>
+        /// <param name="output">raw output result</param>
+        /// <param name="address_folder">file folder address</param>
+        /// <returns>abstracted code execution result</returns>
         public static String abstractResult(String output, String address_folder)
         {
             String executeLine = address_folder + ">java";
@@ -525,6 +565,12 @@ namespace CodeEvaluation
             }
         }
 
+        /// <summary>
+        /// Generate cmake file
+        /// </summary> 
+        /// <param name="cppStandard"> int, by default use 20</param>
+        /// <param name="cmakeMinVersion">string, by default 3.10</param>
+        /// <returns>cmake file name</returns>
         private string GenerateCmakeLists(int cppStandard = 20, string cmakeMinVersion = "3.10")
         {
             string cmakeFilename = CodeFolder + Path.DirectorySeparatorChar + "CMakeLists.txt";
@@ -559,6 +605,13 @@ namespace CodeEvaluation
             return cmakeFilename;
         }
 
+        /// <summary>
+        /// Run C++ code
+        /// </summary>
+        /// <param name="result">code terminal output</param>
+        /// <param name="cmdArgs">command line arguments, seperated by space</param>
+        /// <param name="inputs">commandline stream input</param>
+        /// <returns>whether code executation has problem (true or false)</returns>
         public bool RunCode(out string result, string cmdArgs = "", string inputs = "")
         {
             string buildDir = CompileCode(out string compile);
@@ -571,6 +624,11 @@ namespace CodeEvaluation
             return true;
         }
 
+        /// <summary>
+        /// A quicker way to cimpile, use g++ directly instead of cmake
+        /// </summary>
+        /// <param name="result">compilation command</param>
+        /// <returns>build dir</returns> 
         private string CompileCode(out string result)
         {
             string buildDir = Auxiliary.CreateFolder("build", CodeFolder, true);
@@ -632,9 +690,9 @@ namespace CodeEvaluation
         }
 
         /// <summary>
-        /// get local python executable file
+        /// Get local python executable file
         /// </summary>
-        /// <returns></returns>
+        /// <returns> null </returns>
         private static string GetPythonPath()
         {
             IDictionary environmentVariables = Environment.GetEnvironmentVariables();
@@ -652,6 +710,9 @@ namespace CodeEvaluation
             return null;
         }
 
+        /// <summary>
+        /// Create a Python source file base on the all the text files (concatenation)
+        /// </summary>
         public void CreateSourceFile()
         {
             foreach (var address in textAddress)
@@ -704,6 +765,13 @@ namespace CodeEvaluation
             mainFile = sourceMain;
         }
 
+        /// <summary>
+        /// Run python code
+        /// </summary>
+        /// <param name="result">code terminal output</param>
+        /// <param name="cmdArgs">command line arguments, seperated by space</param>
+        /// <param name="inputs">commandline stream input</param>
+        /// <returns>whether code executation has problem (true or false)</returns>
         public bool RunCode(out string result, string cmdArgs = "", string inputs = "")
         {
             string executable = GetPythonPath();
