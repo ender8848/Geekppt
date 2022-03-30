@@ -30,13 +30,18 @@ jobs:
       with:
         nuget-api-key: ${{ secrets.NuGetAPIKey }}
         nuget-version: '5.x'
+    
+    #install dependencies
+    - name: Install dependencies
+      run: dotnet restore
+      working-directory: CodeEvaluationTest/
 
     # build
     - name: Build the solution
-      run: dotnet build --configuration Release --no-restore
+      run: dotnet build
       working-directory: CodeEvaluationTest/
 
     # test
     - name: Execute unit tests
-      run: dotnet test --no-restore --verbosity normal
+      run: dotnet test
       working-directory: CodeEvaluationTest/
