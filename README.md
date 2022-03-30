@@ -70,7 +70,7 @@ TBI by WZF
 
 ## Technical Documentation
 
-TBI by LWX, ZJW
+For full documentation for the PowerPoint add-in, please go to https://luowx0905.github.io/html/index.html
 
 ## License
 
