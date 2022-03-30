@@ -4,7 +4,7 @@ Note: Please create the unit test after configuring the environment for the add-
 
 ## Step one
 
-In the tiilbar, click ```File``` -> ```Add``` -> ```New Project...```, select ```MSTest Test Project (.NET Core)```.
+In the toolbar, click ```File``` -> ```Add``` -> ```New Project...```, select ```MSTest Test Project (.NET Core)```.
 
 ## Step Two
 

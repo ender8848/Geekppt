@@ -7,7 +7,7 @@ using PowerPoint = Microsoft.Office.Interop.PowerPoint;
 
 namespace CodeEvaluation
 {    
-    partial class Auxiliary
+    public partial class Auxiliary
     {        
         private static List<string> colors = new List<string>();
         private const int MINIMUM_COLOR_DIFFERENCE = 100;

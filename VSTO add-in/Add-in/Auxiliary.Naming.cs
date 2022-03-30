@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace CodeEvaluation
 {
-    enum BoxContent { Code, Input, Output };
+    public enum BoxContent { Code, Input, Output };
 
-    partial class Auxiliary
+    public partial class Auxiliary
     {
         public const string tempFolder = "temp_PPT_add_in";
         private static int boxID = 0;

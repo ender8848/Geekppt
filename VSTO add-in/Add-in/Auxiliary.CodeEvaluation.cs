@@ -11,7 +11,7 @@ using System.Drawing;
 
 namespace CodeEvaluation
 {
-    enum Language { CPP, Java, Python, Invalid };
+    public enum Language { CPP, Java, Python, Invalid };
 
     /// <summary>
     /// All the auxiliary methods are encapsulated in this class. 
@@ -19,7 +19,7 @@ namespace CodeEvaluation
     /// in PowerPoint, determing the naming of PowerPoint components and evaluating
     /// source codes.
     /// </summary>
-    partial class Auxiliary
+    public partial class Auxiliary
     {
         public static string GenerateTextFile(string path, string code, Language type, bool isMain, int id)
         {
