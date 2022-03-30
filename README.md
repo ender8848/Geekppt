@@ -76,7 +76,7 @@ Then users can use ```Reformat``` button to remove all existing tags(users can
 
 ## Technical Documentation
 
-For full documentation for the PowerPoint add-in, please go to [Code Evaluation: Geekppt (luowx0905.github.io)](https://luowx0905.github.io/CodeEvaluation_doc/index.html)
+For full documentation for the PowerPoint add-in, please go to [Code Evaluation: Code Evaluation (luowx0905.github.io)](https://luowx0905.github.io/CodeEvaulation_doc/index.html)
 
 ## License
 
