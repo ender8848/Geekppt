@@ -38,11 +38,13 @@ jobs:
     # build
     - name: Build the solution
       run: msbuild /p:Configuration=$env:Configuration -restore
+      working-directory: CodeEvaluationTest/
       env:
         Configuration: ${{ matrix.configuration }}
 
     # test
     - name: Execute unit tests
       run: dotnet test -c $env:Configuration
+      working-directory: CodeEvaluationTest/
       env:
         Configuration: ${{ matrix.configuration }}
