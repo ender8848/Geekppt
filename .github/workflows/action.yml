@@ -15,6 +15,7 @@ jobs:
         uses: actions/setup-dotnet@v1
       - name: Build
         run: dotnet build --configuration $env:Configuration
+        working-directory: CodeEvaluationTest/
         env:
           Configuration: ${{ matrix.configuration }}
       - name: Test
