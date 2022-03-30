@@ -1,0 +1,383 @@
+\hypertarget{class_code_evaluation_1_1_auxiliary}{}\doxysection{Code\+Evaluation.\+Auxiliary Class Reference}
+\label{class_code_evaluation_1_1_auxiliary}\index{CodeEvaluation.Auxiliary@{CodeEvaluation.Auxiliary}}
+
+
+All the auxiliary methods are encapsulated in this class. The functionalities can be divided into three aspect, hangling color in Power\+Point, determing the naming of Power\+Point components and evaluating source codes.  
+
+
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static string \mbox{\hyperlink{class_code_evaluation_1_1_auxiliary_a46f9ec013757e774e4b316e5bc30e465}{Generate\+Text\+File}} (string path, string code, \mbox{\hyperlink{namespace_code_evaluation_a2320d15310753a4c248438df6ff62231}{Language}} type, bool is\+Main, int id)
+\item 
+static void \mbox{\hyperlink{class_code_evaluation_1_1_auxiliary_a0d59a0f350fff6950f9421f2dee9e827}{Generate\+Text\+File\+And\+Inputs}} (Dictionary$<$ string, string $>$ codes, string path, out List$<$ string $>$ address, out string main, out string inputs)
+\begin{DoxyCompactList}\small\item\em Convert the content in the text boxes into files or string of inputs \end{DoxyCompactList}\item 
+static string \mbox{\hyperlink{class_code_evaluation_1_1_auxiliary_a43128eb2b0bb6b3104adf287ce89d88a}{Create\+Folder}} (string name, string current=\char`\"{}\char`\"{}, bool clear=false)
+\begin{DoxyCompactList}\small\item\em Create a new folder \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_code_evaluation_1_1_auxiliary_a2ebad6f15572aa23316f61a7adaf521e}{Obtain\+Language\+Type}} (Dictionary$<$ string, string $>$ codes, out \mbox{\hyperlink{namespace_code_evaluation_a2320d15310753a4c248438df6ff62231}{Language}} type)
+\begin{DoxyCompactList}\small\item\em Obtain the selected programming language, there should be only one language at the same time \end{DoxyCompactList}\item 
+static List$<$ string $>$ \mbox{\hyperlink{class_code_evaluation_1_1_auxiliary_a23539e7e239f4395403f0ec89b8589ae}{Generate\+Input\+List}} (string input)
+\begin{DoxyCompactList}\small\item\em Split the arguments in string format (separate by ~\newline
+) to a list \end{DoxyCompactList}\item 
+static string \mbox{\hyperlink{class_code_evaluation_1_1_auxiliary_afade0222de9027baeaa030eba713876d}{Generate\+Table\+Input\+List}} (Power\+Point.\+Shape table, string bracket\+Type)
+\item 
+static string \mbox{\hyperlink{class_code_evaluation_1_1_auxiliary_a91125da50a5696b50fff95ce2c37a1da}{Replace\+Parameters\+With\+Table\+Input\+List}} (string text, Dictionary$<$ string, string $>$ table\+Input)
+\item 
+static string \mbox{\hyperlink{class_code_evaluation_1_1_auxiliary_a4e20e6fb18840a85cf585532c6ca78d2}{Run\+Program}} (string executable, string args=\char`\"{}\char`\"{}, string inputs=\char`\"{}\char`\"{})
+\begin{DoxyCompactList}\small\item\em Run a specific program, exception handling should be inserted exe not found, input args not match \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_code_evaluation_1_1_auxiliary_ab0f1c2993c9607ead8abb30d2e87c7ea}{Add\+Picture}} (String file\+\_\+path, Microsoft.\+Office.\+Interop.\+Power\+Point.\+Slide slide, float x=0, float y=0, float width=250, float height=250)
+\begin{DoxyCompactList}\small\item\em Add a picture to the slide \end{DoxyCompactList}\item 
+static string \mbox{\hyperlink{class_code_evaluation_1_1_auxiliary_abae1004a8294bdd827da434fe63e327e}{Generate\+Code\+Box\+Name}} (string base\+Name, \mbox{\hyperlink{namespace_code_evaluation_a40b17efe2fb3ca9e6baab2969a1fbe29}{Box\+Content}} content, int? id=null)
+\begin{DoxyCompactList}\small\item\em Generate text box name \end{DoxyCompactList}\item 
+static string \mbox{\hyperlink{class_code_evaluation_1_1_auxiliary_a6d7f70990635b5e18d95477481e52730}{Generate\+Code\+Table\+Name}} (int? id=null)
+\item 
+static string \mbox{\hyperlink{class_code_evaluation_1_1_auxiliary_ad877529ed526198fe09efb43463808df}{Generate\+Code\+Box\+Name\+For\+Md}} (string base\+Name, int? id=null)
+\item 
+static void \mbox{\hyperlink{class_code_evaluation_1_1_auxiliary_a8442096038e8a4f2b9a136a6a64e07b1}{Extract\+Code\+Box\+Info}} (string box\+Name, out \mbox{\hyperlink{namespace_code_evaluation_a2320d15310753a4c248438df6ff62231}{Language}} type, out bool is\+Main, out \mbox{\hyperlink{namespace_code_evaluation_a40b17efe2fb3ca9e6baab2969a1fbe29}{Box\+Content}} content, out int id)
+\begin{DoxyCompactList}\small\item\em Extract code box information from its name \end{DoxyCompactList}\item 
+static string \mbox{\hyperlink{class_code_evaluation_1_1_auxiliary_a15ac507d7a6a4417fe1e6057f61d6312}{Generate\+Filename}} (\mbox{\hyperlink{namespace_code_evaluation_a2320d15310753a4c248438df6ff62231}{Language}} type, bool is\+Main, int id)
+\begin{DoxyCompactList}\small\item\em Generate the filename for the text file \end{DoxyCompactList}\item 
+static string \mbox{\hyperlink{class_code_evaluation_1_1_auxiliary_a25a6d3e5cb455fbb31be71539d7a967d}{Generate\+Random\+Name}} ()
+\item 
+static string \mbox{\hyperlink{class_code_evaluation_1_1_auxiliary_abd208af5afdafac4a8f9661028bfba48}{Generate\+Color}} ()
+\begin{DoxyCompactList}\small\item\em Generate a color that can be easily distinguished \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const string \mbox{\hyperlink{class_code_evaluation_1_1_auxiliary_a45183064b72fd0aef769fc75f005d1b7}{temp\+Folder}} = \char`\"{}temp\+\_\+\+PPT\+\_\+add\+\_\+in\char`\"{}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{class_code_evaluation_1_1_auxiliary_a8c795ffafb43002fb451e4f297c90a6e}{Generate\+Color}} (out \mbox{\hyperlink{class_code_evaluation_1_1_r_g_b_color}{RGBColor}} color)
+\begin{DoxyCompactList}\small\item\em Randomly generate a new color and determine if it can be easily distinguish from existing color \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{class_code_evaluation_1_1_auxiliary_a66ec5018a53e26a05e414ce5d4bf47f0}{box\+ID}} = 0
+\item 
+static int \mbox{\hyperlink{class_code_evaluation_1_1_auxiliary_a4d53f31f9ffc0336c433c2fe7055c337}{table\+ID}} = 0
+\item 
+static readonly Random \mbox{\hyperlink{class_code_evaluation_1_1_auxiliary_a87f857d1402570e01d8de75510790275}{rand}} = new Random()
+\item 
+static List$<$ string $>$ \mbox{\hyperlink{class_code_evaluation_1_1_auxiliary_a59eb2eee491b6cc699fea5f35793f2bd}{colors}} = new List$<$string$>$()
+\item 
+const int \mbox{\hyperlink{class_code_evaluation_1_1_auxiliary_a8dbb3b6fedf3336e2e884447b4e9e5a3}{MINIMUM\+\_\+\+COLOR\+\_\+\+DIFFERENCE}} = 100
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+All the auxiliary methods are encapsulated in this class. The functionalities can be divided into three aspect, hangling color in Power\+Point, determing the naming of Power\+Point components and evaluating source codes. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_code_evaluation_1_1_auxiliary_ab0f1c2993c9607ead8abb30d2e87c7ea}\label{class_code_evaluation_1_1_auxiliary_ab0f1c2993c9607ead8abb30d2e87c7ea}} 
+\index{CodeEvaluation.Auxiliary@{CodeEvaluation.Auxiliary}!AddPicture@{AddPicture}}
+\index{AddPicture@{AddPicture}!CodeEvaluation.Auxiliary@{CodeEvaluation.Auxiliary}}
+\doxysubsubsection{\texorpdfstring{AddPicture()}{AddPicture()}}
+{\footnotesize\ttfamily static void Code\+Evaluation.\+Auxiliary.\+Add\+Picture (\begin{DoxyParamCaption}\item[{String}]{file\+\_\+path,  }\item[{Microsoft.\+Office.\+Interop.\+Power\+Point.\+Slide}]{slide,  }\item[{float}]{x = {\ttfamily 0},  }\item[{float}]{y = {\ttfamily 0},  }\item[{float}]{width = {\ttfamily 250},  }\item[{float}]{height = {\ttfamily 250} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Add a picture to the slide 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+\_\+path} & The file path of the added picture\\
+\hline
+{\em slide} & The slide to which the picture will be added\\
+\hline
+{\em x} & The abscissa relative to the upper left corner of the slide\\
+\hline
+{\em y} & The ordinate relative to the upper left corner of the slide\\
+\hline
+{\em height} & The height of the picture\\
+\hline
+{\em width} & The width of the picture\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_code_evaluation_1_1_auxiliary_a43128eb2b0bb6b3104adf287ce89d88a}\label{class_code_evaluation_1_1_auxiliary_a43128eb2b0bb6b3104adf287ce89d88a}} 
+\index{CodeEvaluation.Auxiliary@{CodeEvaluation.Auxiliary}!CreateFolder@{CreateFolder}}
+\index{CreateFolder@{CreateFolder}!CodeEvaluation.Auxiliary@{CodeEvaluation.Auxiliary}}
+\doxysubsubsection{\texorpdfstring{CreateFolder()}{CreateFolder()}}
+{\footnotesize\ttfamily static string Code\+Evaluation.\+Auxiliary.\+Create\+Folder (\begin{DoxyParamCaption}\item[{string}]{name,  }\item[{string}]{current = {\ttfamily \char`\"{}\char`\"{}},  }\item[{bool}]{clear = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Create a new folder 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the new folder\\
+\hline
+{\em current} & The path to create the folder\\
+\hline
+{\em clear} & Whether the folder should be cleared if it exists\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The path of the new folder
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_code_evaluation_1_1_auxiliary_a8442096038e8a4f2b9a136a6a64e07b1}\label{class_code_evaluation_1_1_auxiliary_a8442096038e8a4f2b9a136a6a64e07b1}} 
+\index{CodeEvaluation.Auxiliary@{CodeEvaluation.Auxiliary}!ExtractCodeBoxInfo@{ExtractCodeBoxInfo}}
+\index{ExtractCodeBoxInfo@{ExtractCodeBoxInfo}!CodeEvaluation.Auxiliary@{CodeEvaluation.Auxiliary}}
+\doxysubsubsection{\texorpdfstring{ExtractCodeBoxInfo()}{ExtractCodeBoxInfo()}}
+{\footnotesize\ttfamily static void Code\+Evaluation.\+Auxiliary.\+Extract\+Code\+Box\+Info (\begin{DoxyParamCaption}\item[{string}]{box\+Name,  }\item[{out \mbox{\hyperlink{namespace_code_evaluation_a2320d15310753a4c248438df6ff62231}{Language}}}]{type,  }\item[{out bool}]{is\+Main,  }\item[{out \mbox{\hyperlink{namespace_code_evaluation_a40b17efe2fb3ca9e6baab2969a1fbe29}{Box\+Content}}}]{content,  }\item[{out int}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Extract code box information from its name 
+
+
+\begin{DoxyParams}{Parameters}
+{\em box\+Name} & The name of the code box\\
+\hline
+{\em type} & The programming language of the code\\
+\hline
+{\em is\+Main} & Whether there is main function in the code box (always false for Python)\\
+\hline
+{\em content} & The content of the code box, for example, code and input/output text\\
+\hline
+{\em id} & The ID of the code box\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_code_evaluation_1_1_auxiliary_abae1004a8294bdd827da434fe63e327e}\label{class_code_evaluation_1_1_auxiliary_abae1004a8294bdd827da434fe63e327e}} 
+\index{CodeEvaluation.Auxiliary@{CodeEvaluation.Auxiliary}!GenerateCodeBoxName@{GenerateCodeBoxName}}
+\index{GenerateCodeBoxName@{GenerateCodeBoxName}!CodeEvaluation.Auxiliary@{CodeEvaluation.Auxiliary}}
+\doxysubsubsection{\texorpdfstring{GenerateCodeBoxName()}{GenerateCodeBoxName()}}
+{\footnotesize\ttfamily static string Code\+Evaluation.\+Auxiliary.\+Generate\+Code\+Box\+Name (\begin{DoxyParamCaption}\item[{string}]{base\+Name,  }\item[{\mbox{\hyperlink{namespace_code_evaluation_a40b17efe2fb3ca9e6baab2969a1fbe29}{Box\+Content}}}]{content,  }\item[{int?}]{id = {\ttfamily null} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Generate text box name 
+
+
+\begin{DoxyParams}{Parameters}
+{\em base\+Name} & The user selection or name from other text boxes, for example, C++\+\_\+main\\
+\hline
+{\em content} & The content of the text box\\
+\hline
+{\em id} & The ID of this text box, the internal value is used if no valus is provided\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The name of the text (code) box in Power\+Point
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_code_evaluation_1_1_auxiliary_ad877529ed526198fe09efb43463808df}\label{class_code_evaluation_1_1_auxiliary_ad877529ed526198fe09efb43463808df}} 
+\index{CodeEvaluation.Auxiliary@{CodeEvaluation.Auxiliary}!GenerateCodeBoxNameForMd@{GenerateCodeBoxNameForMd}}
+\index{GenerateCodeBoxNameForMd@{GenerateCodeBoxNameForMd}!CodeEvaluation.Auxiliary@{CodeEvaluation.Auxiliary}}
+\doxysubsubsection{\texorpdfstring{GenerateCodeBoxNameForMd()}{GenerateCodeBoxNameForMd()}}
+{\footnotesize\ttfamily static string Code\+Evaluation.\+Auxiliary.\+Generate\+Code\+Box\+Name\+For\+Md (\begin{DoxyParamCaption}\item[{string}]{base\+Name,  }\item[{int?}]{id = {\ttfamily null} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_code_evaluation_1_1_auxiliary_a6d7f70990635b5e18d95477481e52730}\label{class_code_evaluation_1_1_auxiliary_a6d7f70990635b5e18d95477481e52730}} 
+\index{CodeEvaluation.Auxiliary@{CodeEvaluation.Auxiliary}!GenerateCodeTableName@{GenerateCodeTableName}}
+\index{GenerateCodeTableName@{GenerateCodeTableName}!CodeEvaluation.Auxiliary@{CodeEvaluation.Auxiliary}}
+\doxysubsubsection{\texorpdfstring{GenerateCodeTableName()}{GenerateCodeTableName()}}
+{\footnotesize\ttfamily static string Code\+Evaluation.\+Auxiliary.\+Generate\+Code\+Table\+Name (\begin{DoxyParamCaption}\item[{int?}]{id = {\ttfamily null} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_code_evaluation_1_1_auxiliary_abd208af5afdafac4a8f9661028bfba48}\label{class_code_evaluation_1_1_auxiliary_abd208af5afdafac4a8f9661028bfba48}} 
+\index{CodeEvaluation.Auxiliary@{CodeEvaluation.Auxiliary}!GenerateColor@{GenerateColor}}
+\index{GenerateColor@{GenerateColor}!CodeEvaluation.Auxiliary@{CodeEvaluation.Auxiliary}}
+\doxysubsubsection{\texorpdfstring{GenerateColor()}{GenerateColor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static string Code\+Evaluation.\+Auxiliary.\+Generate\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Generate a color that can be easily distinguished 
+
+\begin{DoxyReturn}{Returns}
+The RGB color in hexadecmial
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_code_evaluation_1_1_auxiliary_a8c795ffafb43002fb451e4f297c90a6e}\label{class_code_evaluation_1_1_auxiliary_a8c795ffafb43002fb451e4f297c90a6e}} 
+\index{CodeEvaluation.Auxiliary@{CodeEvaluation.Auxiliary}!GenerateColor@{GenerateColor}}
+\index{GenerateColor@{GenerateColor}!CodeEvaluation.Auxiliary@{CodeEvaluation.Auxiliary}}
+\doxysubsubsection{\texorpdfstring{GenerateColor()}{GenerateColor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static bool Code\+Evaluation.\+Auxiliary.\+Generate\+Color (\begin{DoxyParamCaption}\item[{out \mbox{\hyperlink{class_code_evaluation_1_1_r_g_b_color}{RGBColor}}}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Randomly generate a new color and determine if it can be easily distinguish from existing color 
+
+
+\begin{DoxyParams}{Parameters}
+{\em color} & The new color\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Whether the color can be istinguish (determine the color difference)
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_code_evaluation_1_1_auxiliary_a15ac507d7a6a4417fe1e6057f61d6312}\label{class_code_evaluation_1_1_auxiliary_a15ac507d7a6a4417fe1e6057f61d6312}} 
+\index{CodeEvaluation.Auxiliary@{CodeEvaluation.Auxiliary}!GenerateFilename@{GenerateFilename}}
+\index{GenerateFilename@{GenerateFilename}!CodeEvaluation.Auxiliary@{CodeEvaluation.Auxiliary}}
+\doxysubsubsection{\texorpdfstring{GenerateFilename()}{GenerateFilename()}}
+{\footnotesize\ttfamily static string Code\+Evaluation.\+Auxiliary.\+Generate\+Filename (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_code_evaluation_a2320d15310753a4c248438df6ff62231}{Language}}}]{type,  }\item[{bool}]{is\+Main,  }\item[{int}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Generate the filename for the text file 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & The programming language of the code\\
+\hline
+{\em is\+Main} & Whether the main function is in the file\\
+\hline
+{\em id} & The ID of the file\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The filename based on its specifications
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_code_evaluation_1_1_auxiliary_a23539e7e239f4395403f0ec89b8589ae}\label{class_code_evaluation_1_1_auxiliary_a23539e7e239f4395403f0ec89b8589ae}} 
+\index{CodeEvaluation.Auxiliary@{CodeEvaluation.Auxiliary}!GenerateInputList@{GenerateInputList}}
+\index{GenerateInputList@{GenerateInputList}!CodeEvaluation.Auxiliary@{CodeEvaluation.Auxiliary}}
+\doxysubsubsection{\texorpdfstring{GenerateInputList()}{GenerateInputList()}}
+{\footnotesize\ttfamily static List$<$ string $>$ Code\+Evaluation.\+Auxiliary.\+Generate\+Input\+List (\begin{DoxyParamCaption}\item[{string}]{input }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Split the arguments in string format (separate by ~\newline
+) to a list 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A list of arguments
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_code_evaluation_1_1_auxiliary_a25a6d3e5cb455fbb31be71539d7a967d}\label{class_code_evaluation_1_1_auxiliary_a25a6d3e5cb455fbb31be71539d7a967d}} 
+\index{CodeEvaluation.Auxiliary@{CodeEvaluation.Auxiliary}!GenerateRandomName@{GenerateRandomName}}
+\index{GenerateRandomName@{GenerateRandomName}!CodeEvaluation.Auxiliary@{CodeEvaluation.Auxiliary}}
+\doxysubsubsection{\texorpdfstring{GenerateRandomName()}{GenerateRandomName()}}
+{\footnotesize\ttfamily static string Code\+Evaluation.\+Auxiliary.\+Generate\+Random\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_code_evaluation_1_1_auxiliary_afade0222de9027baeaa030eba713876d}\label{class_code_evaluation_1_1_auxiliary_afade0222de9027baeaa030eba713876d}} 
+\index{CodeEvaluation.Auxiliary@{CodeEvaluation.Auxiliary}!GenerateTableInputList@{GenerateTableInputList}}
+\index{GenerateTableInputList@{GenerateTableInputList}!CodeEvaluation.Auxiliary@{CodeEvaluation.Auxiliary}}
+\doxysubsubsection{\texorpdfstring{GenerateTableInputList()}{GenerateTableInputList()}}
+{\footnotesize\ttfamily static string Code\+Evaluation.\+Auxiliary.\+Generate\+Table\+Input\+List (\begin{DoxyParamCaption}\item[{Power\+Point.\+Shape}]{table,  }\item[{string}]{bracket\+Type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_code_evaluation_1_1_auxiliary_a46f9ec013757e774e4b316e5bc30e465}\label{class_code_evaluation_1_1_auxiliary_a46f9ec013757e774e4b316e5bc30e465}} 
+\index{CodeEvaluation.Auxiliary@{CodeEvaluation.Auxiliary}!GenerateTextFile@{GenerateTextFile}}
+\index{GenerateTextFile@{GenerateTextFile}!CodeEvaluation.Auxiliary@{CodeEvaluation.Auxiliary}}
+\doxysubsubsection{\texorpdfstring{GenerateTextFile()}{GenerateTextFile()}}
+{\footnotesize\ttfamily static string Code\+Evaluation.\+Auxiliary.\+Generate\+Text\+File (\begin{DoxyParamCaption}\item[{string}]{path,  }\item[{string}]{code,  }\item[{\mbox{\hyperlink{namespace_code_evaluation_a2320d15310753a4c248438df6ff62231}{Language}}}]{type,  }\item[{bool}]{is\+Main,  }\item[{int}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_code_evaluation_1_1_auxiliary_a0d59a0f350fff6950f9421f2dee9e827}\label{class_code_evaluation_1_1_auxiliary_a0d59a0f350fff6950f9421f2dee9e827}} 
+\index{CodeEvaluation.Auxiliary@{CodeEvaluation.Auxiliary}!GenerateTextFileAndInputs@{GenerateTextFileAndInputs}}
+\index{GenerateTextFileAndInputs@{GenerateTextFileAndInputs}!CodeEvaluation.Auxiliary@{CodeEvaluation.Auxiliary}}
+\doxysubsubsection{\texorpdfstring{GenerateTextFileAndInputs()}{GenerateTextFileAndInputs()}}
+{\footnotesize\ttfamily static void Code\+Evaluation.\+Auxiliary.\+Generate\+Text\+File\+And\+Inputs (\begin{DoxyParamCaption}\item[{Dictionary$<$ string, string $>$}]{codes,  }\item[{string}]{path,  }\item[{out List$<$ string $>$}]{address,  }\item[{out string}]{main,  }\item[{out string}]{inputs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Convert the content in the text boxes into files or string of inputs 
+
+
+\begin{DoxyParams}{Parameters}
+{\em codes} & A dictionary whose key is the name of the text box, value is its content\\
+\hline
+{\em path} & The path to create files\\
+\hline
+{\em address} & The list contains all the output files\\
+\hline
+{\em main} & The address of the file contains main function\\
+\hline
+{\em inputs} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_code_evaluation_1_1_auxiliary_a2ebad6f15572aa23316f61a7adaf521e}\label{class_code_evaluation_1_1_auxiliary_a2ebad6f15572aa23316f61a7adaf521e}} 
+\index{CodeEvaluation.Auxiliary@{CodeEvaluation.Auxiliary}!ObtainLanguageType@{ObtainLanguageType}}
+\index{ObtainLanguageType@{ObtainLanguageType}!CodeEvaluation.Auxiliary@{CodeEvaluation.Auxiliary}}
+\doxysubsubsection{\texorpdfstring{ObtainLanguageType()}{ObtainLanguageType()}}
+{\footnotesize\ttfamily static bool Code\+Evaluation.\+Auxiliary.\+Obtain\+Language\+Type (\begin{DoxyParamCaption}\item[{Dictionary$<$ string, string $>$}]{codes,  }\item[{out \mbox{\hyperlink{namespace_code_evaluation_a2320d15310753a4c248438df6ff62231}{Language}}}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Obtain the selected programming language, there should be only one language at the same time 
+
+
+\begin{DoxyParams}{Parameters}
+{\em codes} & A dictionary whose content is box\+Name\+:code (only box name is used)\\
+\hline
+{\em type} & The selected programming language, \mbox{\hyperlink{namespace_code_evaluation_a2320d15310753a4c248438df6ff62231a4bbb8f967da6d1a610596d7257179c2b}{Language.\+Invalid}} is set if more than one languages are selected\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if only one language is selected, otherwise false
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_code_evaluation_1_1_auxiliary_a91125da50a5696b50fff95ce2c37a1da}\label{class_code_evaluation_1_1_auxiliary_a91125da50a5696b50fff95ce2c37a1da}} 
+\index{CodeEvaluation.Auxiliary@{CodeEvaluation.Auxiliary}!ReplaceParametersWithTableInputList@{ReplaceParametersWithTableInputList}}
+\index{ReplaceParametersWithTableInputList@{ReplaceParametersWithTableInputList}!CodeEvaluation.Auxiliary@{CodeEvaluation.Auxiliary}}
+\doxysubsubsection{\texorpdfstring{ReplaceParametersWithTableInputList()}{ReplaceParametersWithTableInputList()}}
+{\footnotesize\ttfamily static string Code\+Evaluation.\+Auxiliary.\+Replace\+Parameters\+With\+Table\+Input\+List (\begin{DoxyParamCaption}\item[{string}]{text,  }\item[{Dictionary$<$ string, string $>$}]{table\+Input }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_code_evaluation_1_1_auxiliary_a4e20e6fb18840a85cf585532c6ca78d2}\label{class_code_evaluation_1_1_auxiliary_a4e20e6fb18840a85cf585532c6ca78d2}} 
+\index{CodeEvaluation.Auxiliary@{CodeEvaluation.Auxiliary}!RunProgram@{RunProgram}}
+\index{RunProgram@{RunProgram}!CodeEvaluation.Auxiliary@{CodeEvaluation.Auxiliary}}
+\doxysubsubsection{\texorpdfstring{RunProgram()}{RunProgram()}}
+{\footnotesize\ttfamily static string Code\+Evaluation.\+Auxiliary.\+Run\+Program (\begin{DoxyParamCaption}\item[{string}]{executable,  }\item[{string}]{args = {\ttfamily \char`\"{}\char`\"{}},  }\item[{string}]{inputs = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Run a specific program, exception handling should be inserted exe not found, input args not match 
+
+
+\begin{DoxyParams}{Parameters}
+{\em executable} & The name of the program\\
+\hline
+{\em args} & The arguments of this program\\
+\hline
+{\em inputs} & The inputs of this program\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the program run successfully
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_code_evaluation_1_1_auxiliary_a66ec5018a53e26a05e414ce5d4bf47f0}\label{class_code_evaluation_1_1_auxiliary_a66ec5018a53e26a05e414ce5d4bf47f0}} 
+\index{CodeEvaluation.Auxiliary@{CodeEvaluation.Auxiliary}!boxID@{boxID}}
+\index{boxID@{boxID}!CodeEvaluation.Auxiliary@{CodeEvaluation.Auxiliary}}
+\doxysubsubsection{\texorpdfstring{boxID}{boxID}}
+{\footnotesize\ttfamily int Code\+Evaluation.\+Auxiliary.\+box\+ID = 0\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_code_evaluation_1_1_auxiliary_a59eb2eee491b6cc699fea5f35793f2bd}\label{class_code_evaluation_1_1_auxiliary_a59eb2eee491b6cc699fea5f35793f2bd}} 
+\index{CodeEvaluation.Auxiliary@{CodeEvaluation.Auxiliary}!colors@{colors}}
+\index{colors@{colors}!CodeEvaluation.Auxiliary@{CodeEvaluation.Auxiliary}}
+\doxysubsubsection{\texorpdfstring{colors}{colors}}
+{\footnotesize\ttfamily List$<$string$>$ Code\+Evaluation.\+Auxiliary.\+colors = new List$<$string$>$()\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_code_evaluation_1_1_auxiliary_a8dbb3b6fedf3336e2e884447b4e9e5a3}\label{class_code_evaluation_1_1_auxiliary_a8dbb3b6fedf3336e2e884447b4e9e5a3}} 
+\index{CodeEvaluation.Auxiliary@{CodeEvaluation.Auxiliary}!MINIMUM\_COLOR\_DIFFERENCE@{MINIMUM\_COLOR\_DIFFERENCE}}
+\index{MINIMUM\_COLOR\_DIFFERENCE@{MINIMUM\_COLOR\_DIFFERENCE}!CodeEvaluation.Auxiliary@{CodeEvaluation.Auxiliary}}
+\doxysubsubsection{\texorpdfstring{MINIMUM\_COLOR\_DIFFERENCE}{MINIMUM\_COLOR\_DIFFERENCE}}
+{\footnotesize\ttfamily const int Code\+Evaluation.\+Auxiliary.\+MINIMUM\+\_\+\+COLOR\+\_\+\+DIFFERENCE = 100\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_code_evaluation_1_1_auxiliary_a87f857d1402570e01d8de75510790275}\label{class_code_evaluation_1_1_auxiliary_a87f857d1402570e01d8de75510790275}} 
+\index{CodeEvaluation.Auxiliary@{CodeEvaluation.Auxiliary}!rand@{rand}}
+\index{rand@{rand}!CodeEvaluation.Auxiliary@{CodeEvaluation.Auxiliary}}
+\doxysubsubsection{\texorpdfstring{rand}{rand}}
+{\footnotesize\ttfamily readonly Random Code\+Evaluation.\+Auxiliary.\+rand = new Random()\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_code_evaluation_1_1_auxiliary_a4d53f31f9ffc0336c433c2fe7055c337}\label{class_code_evaluation_1_1_auxiliary_a4d53f31f9ffc0336c433c2fe7055c337}} 
+\index{CodeEvaluation.Auxiliary@{CodeEvaluation.Auxiliary}!tableID@{tableID}}
+\index{tableID@{tableID}!CodeEvaluation.Auxiliary@{CodeEvaluation.Auxiliary}}
+\doxysubsubsection{\texorpdfstring{tableID}{tableID}}
+{\footnotesize\ttfamily int Code\+Evaluation.\+Auxiliary.\+table\+ID = 0\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_code_evaluation_1_1_auxiliary_a45183064b72fd0aef769fc75f005d1b7}\label{class_code_evaluation_1_1_auxiliary_a45183064b72fd0aef769fc75f005d1b7}} 
+\index{CodeEvaluation.Auxiliary@{CodeEvaluation.Auxiliary}!tempFolder@{tempFolder}}
+\index{tempFolder@{tempFolder}!CodeEvaluation.Auxiliary@{CodeEvaluation.Auxiliary}}
+\doxysubsubsection{\texorpdfstring{tempFolder}{tempFolder}}
+{\footnotesize\ttfamily const string Code\+Evaluation.\+Auxiliary.\+temp\+Folder = \char`\"{}temp\+\_\+\+PPT\+\_\+add\+\_\+in\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Code\+Evaluation/\mbox{\hyperlink{_auxiliary_8_code_evaluation_8cs}{Auxiliary.\+Code\+Evaluation.\+cs}}\item 
+Code\+Evaluation/\mbox{\hyperlink{_auxiliary_8_naming_8cs}{Auxiliary.\+Naming.\+cs}}\item 
+Code\+Evaluation/\mbox{\hyperlink{_auxiliary_8_r_g_b_color_8cs}{Auxiliary.\+RGBColor.\+cs}}\end{DoxyCompactItemize}
