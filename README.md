@@ -10,7 +10,7 @@ In this project, we aim to build a ppt addin called ```Code Evaluation``` that h
 
 ## Installation
 
-link TBI
+[published version](https://github.com/ender8848/Geekppt/tree/main/VSTO%20add-in/publish)
 
 ## User Guide
 
