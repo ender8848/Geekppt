@@ -1,3 +1,4 @@
+![example workflow](https://github.com/ender8848/Geekppt/actions/workflows/action.yml/badge.svg)
 # Geekppt
 
 ## A powerful slide making tool -- execute code in textbox
