@@ -1,0 +1,40 @@
+# .travis.yml
+# Modified travis script that generates and submits doxygen documentation
+os: windows
+dist: trusty
+language: csharp
+solution: xxx.sln
+mono: none
+dotnet: 2.1.502
+script:
+  - dotnet restore
+
+# Chose which branches to build or not build
+branches:
+  only:
+    - master
+  except:
+    - develop
+
+# Modify these variables that will be used in generateDocumentationAndDep.sh
+# (see below). They tell Doxygen where to find the source on and were to send
+# the generated Documentation
+#env:
+#  global:
+#    - GH_REPO_NAME: Geekppt
+#    - DOXYFILE: $TRAVIS_BUILD_DIR/Doxyfile
+#    - GH_REPO_REF: github.com/wzf6667/Geekppt.git
+
+# Build your code and run the MSTest
+script:
+  - dotnet restore
+  - dotnet test
+
+
+# After successfully building and testing your software we give Doxygen the
+# instruction to scan the code for docstrings and generate the html output.
+# The bulk of these instructions is encapsulated in a script.
+after_success:
+  - cd $TRAVIS_BUILD_DIR
+  - chmod +x generateDocumentationAndDeploy.sh
+  - ./generateDocumentationAndDeploy.sh
