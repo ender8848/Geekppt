@@ -1,0 +1,191 @@
+\hypertarget{class_code_evaluation_1_1_code_evaluation_python}{}\doxysection{Code\+Evaluation.\+Code\+Evaluation\+Python Class Reference}
+\label{class_code_evaluation_1_1_code_evaluation_python}\index{CodeEvaluation.CodeEvaluationPython@{CodeEvaluation.CodeEvaluationPython}}
+
+
+Evaluate Python source codes  
+
+
+Inheritance diagram for Code\+Evaluation.\+Code\+Evaluation\+Python\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_code_evaluation_1_1_code_evaluation_python}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_code_evaluation_1_1_code_evaluation_python_a2a4d164167110b47be3afd50dd3f4bca}{Code\+Evaluation\+Python}} (string \mbox{\hyperlink{class_code_evaluation_1_1_code_evaluation_python_a4ee998495c491fb33526a47e014f514f}{main\+File}}, List$<$ string $>$ \mbox{\hyperlink{class_code_evaluation_1_1_code_evaluation_python_aa456bae03737d2ba00cbd6c693e2c25b}{text\+Address}})
+\item 
+void \mbox{\hyperlink{class_code_evaluation_1_1_code_evaluation_python_ad3204dc4503ccda62a0ce42fb30c619e}{Create\+Source\+File}} ()
+\item 
+bool \mbox{\hyperlink{class_code_evaluation_1_1_code_evaluation_python_a46ca23ee6c3de829704cc30bf84f4e89}{Run\+Code}} (out string result, string cmd\+Args=\char`\"{}\char`\"{}, string inputs=\char`\"{}\char`\"{})
+\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+List$<$ string $>$ \mbox{\hyperlink{class_code_evaluation_1_1_code_evaluation_python_ab05beb21b4237928497fb73e26ca73a3}{Text\+Address}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+List$<$ string $>$ \mbox{\hyperlink{class_code_evaluation_1_1_code_evaluation_python_a709921ca42aaeaa0a521686660c21c75}{Picture\+Address}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+string \mbox{\hyperlink{class_code_evaluation_1_1_code_evaluation_python_a769d9fcdd918220b6afe12153f7f4ce1}{Main\+File}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+string \mbox{\hyperlink{class_code_evaluation_1_1_code_evaluation_python_a20bf8a87191ae0f54d80186a0b0bf585}{OSName}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+string \mbox{\hyperlink{class_code_evaluation_1_1_code_evaluation_python_aa973889e5a34035c16eceeb424cc49e7}{Code\+Folder}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static string \mbox{\hyperlink{class_code_evaluation_1_1_code_evaluation_python_a8bd6d547ea742edc43e448713d685501}{Get\+Python\+Path}} ()
+\begin{DoxyCompactList}\small\item\em get local python executable file \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+List$<$ string $>$ \mbox{\hyperlink{class_code_evaluation_1_1_code_evaluation_python_aa456bae03737d2ba00cbd6c693e2c25b}{text\+Address}}
+\item 
+List$<$ string $>$ \mbox{\hyperlink{class_code_evaluation_1_1_code_evaluation_python_ac849be6bd8e370056a40c093fdabd1c1}{picture\+Address}} = new List$<$string$>$()
+\item 
+List$<$ string $>$ \mbox{\hyperlink{class_code_evaluation_1_1_code_evaluation_python_a66d2ad578e5afefa5fac0fe29c77703f}{libs}}
+\item 
+string \mbox{\hyperlink{class_code_evaluation_1_1_code_evaluation_python_a4ee998495c491fb33526a47e014f514f}{main\+File}}
+\item 
+readonly string \mbox{\hyperlink{class_code_evaluation_1_1_code_evaluation_python_ab99a3889e17cbd7598cfada36bcc68b0}{OS\+\_\+\+NAME}}
+\item 
+readonly string \mbox{\hyperlink{class_code_evaluation_1_1_code_evaluation_python_a5e6b2764ee65894661e999fbaeac0963}{CODE\+\_\+\+FOLDER}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const \mbox{\hyperlink{namespace_code_evaluation_a2320d15310753a4c248438df6ff62231}{Language}} \mbox{\hyperlink{class_code_evaluation_1_1_code_evaluation_python_adc54f7df3c02cd3210ed85d79ef5e208}{TYPE}} = \mbox{\hyperlink{namespace_code_evaluation_a2320d15310753a4c248438df6ff62231aa7f5f35426b927411fc9231b56382173}{Language.\+Python}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Evaluate Python source codes 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_code_evaluation_1_1_code_evaluation_python_a2a4d164167110b47be3afd50dd3f4bca}\label{class_code_evaluation_1_1_code_evaluation_python_a2a4d164167110b47be3afd50dd3f4bca}} 
+\index{CodeEvaluation.CodeEvaluationPython@{CodeEvaluation.CodeEvaluationPython}!CodeEvaluationPython@{CodeEvaluationPython}}
+\index{CodeEvaluationPython@{CodeEvaluationPython}!CodeEvaluation.CodeEvaluationPython@{CodeEvaluation.CodeEvaluationPython}}
+\doxysubsubsection{\texorpdfstring{CodeEvaluationPython()}{CodeEvaluationPython()}}
+{\footnotesize\ttfamily Code\+Evaluation.\+Code\+Evaluation\+Python.\+Code\+Evaluation\+Python (\begin{DoxyParamCaption}\item[{string}]{main\+File,  }\item[{List$<$ string $>$}]{text\+Address }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_code_evaluation_1_1_code_evaluation_python_ad3204dc4503ccda62a0ce42fb30c619e}\label{class_code_evaluation_1_1_code_evaluation_python_ad3204dc4503ccda62a0ce42fb30c619e}} 
+\index{CodeEvaluation.CodeEvaluationPython@{CodeEvaluation.CodeEvaluationPython}!CreateSourceFile@{CreateSourceFile}}
+\index{CreateSourceFile@{CreateSourceFile}!CodeEvaluation.CodeEvaluationPython@{CodeEvaluation.CodeEvaluationPython}}
+\doxysubsubsection{\texorpdfstring{CreateSourceFile()}{CreateSourceFile()}}
+{\footnotesize\ttfamily void Code\+Evaluation.\+Code\+Evaluation\+Python.\+Create\+Source\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Implements \mbox{\hyperlink{interface_code_evaluation_1_1_i_code_evaluation_a99136ca42ee707cf6acff8dbdc00d90c}{Code\+Evaluation.\+ICode\+Evaluation}}.
+
+\mbox{\Hypertarget{class_code_evaluation_1_1_code_evaluation_python_a8bd6d547ea742edc43e448713d685501}\label{class_code_evaluation_1_1_code_evaluation_python_a8bd6d547ea742edc43e448713d685501}} 
+\index{CodeEvaluation.CodeEvaluationPython@{CodeEvaluation.CodeEvaluationPython}!GetPythonPath@{GetPythonPath}}
+\index{GetPythonPath@{GetPythonPath}!CodeEvaluation.CodeEvaluationPython@{CodeEvaluation.CodeEvaluationPython}}
+\doxysubsubsection{\texorpdfstring{GetPythonPath()}{GetPythonPath()}}
+{\footnotesize\ttfamily static string Code\+Evaluation.\+Code\+Evaluation\+Python.\+Get\+Python\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+get local python executable file 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_code_evaluation_1_1_code_evaluation_python_a46ca23ee6c3de829704cc30bf84f4e89}\label{class_code_evaluation_1_1_code_evaluation_python_a46ca23ee6c3de829704cc30bf84f4e89}} 
+\index{CodeEvaluation.CodeEvaluationPython@{CodeEvaluation.CodeEvaluationPython}!RunCode@{RunCode}}
+\index{RunCode@{RunCode}!CodeEvaluation.CodeEvaluationPython@{CodeEvaluation.CodeEvaluationPython}}
+\doxysubsubsection{\texorpdfstring{RunCode()}{RunCode()}}
+{\footnotesize\ttfamily bool Code\+Evaluation.\+Code\+Evaluation\+Python.\+Run\+Code (\begin{DoxyParamCaption}\item[{out string}]{result,  }\item[{string}]{cmd\+Args = {\ttfamily \char`\"{}\char`\"{}},  }\item[{string}]{inputs = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Implements \mbox{\hyperlink{interface_code_evaluation_1_1_i_code_evaluation_affde677b8e1b0bac48ac2ac1a8512d14}{Code\+Evaluation.\+ICode\+Evaluation}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_code_evaluation_1_1_code_evaluation_python_a5e6b2764ee65894661e999fbaeac0963}\label{class_code_evaluation_1_1_code_evaluation_python_a5e6b2764ee65894661e999fbaeac0963}} 
+\index{CodeEvaluation.CodeEvaluationPython@{CodeEvaluation.CodeEvaluationPython}!CODE\_FOLDER@{CODE\_FOLDER}}
+\index{CODE\_FOLDER@{CODE\_FOLDER}!CodeEvaluation.CodeEvaluationPython@{CodeEvaluation.CodeEvaluationPython}}
+\doxysubsubsection{\texorpdfstring{CODE\_FOLDER}{CODE\_FOLDER}}
+{\footnotesize\ttfamily readonly string Code\+Evaluation.\+Code\+Evaluation\+Python.\+CODE\+\_\+\+FOLDER\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_code_evaluation_1_1_code_evaluation_python_a66d2ad578e5afefa5fac0fe29c77703f}\label{class_code_evaluation_1_1_code_evaluation_python_a66d2ad578e5afefa5fac0fe29c77703f}} 
+\index{CodeEvaluation.CodeEvaluationPython@{CodeEvaluation.CodeEvaluationPython}!libs@{libs}}
+\index{libs@{libs}!CodeEvaluation.CodeEvaluationPython@{CodeEvaluation.CodeEvaluationPython}}
+\doxysubsubsection{\texorpdfstring{libs}{libs}}
+{\footnotesize\ttfamily List$<$string$>$ Code\+Evaluation.\+Code\+Evaluation\+Python.\+libs\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_code_evaluation_1_1_code_evaluation_python_a4ee998495c491fb33526a47e014f514f}\label{class_code_evaluation_1_1_code_evaluation_python_a4ee998495c491fb33526a47e014f514f}} 
+\index{CodeEvaluation.CodeEvaluationPython@{CodeEvaluation.CodeEvaluationPython}!mainFile@{mainFile}}
+\index{mainFile@{mainFile}!CodeEvaluation.CodeEvaluationPython@{CodeEvaluation.CodeEvaluationPython}}
+\doxysubsubsection{\texorpdfstring{mainFile}{mainFile}}
+{\footnotesize\ttfamily string Code\+Evaluation.\+Code\+Evaluation\+Python.\+main\+File\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_code_evaluation_1_1_code_evaluation_python_ab99a3889e17cbd7598cfada36bcc68b0}\label{class_code_evaluation_1_1_code_evaluation_python_ab99a3889e17cbd7598cfada36bcc68b0}} 
+\index{CodeEvaluation.CodeEvaluationPython@{CodeEvaluation.CodeEvaluationPython}!OS\_NAME@{OS\_NAME}}
+\index{OS\_NAME@{OS\_NAME}!CodeEvaluation.CodeEvaluationPython@{CodeEvaluation.CodeEvaluationPython}}
+\doxysubsubsection{\texorpdfstring{OS\_NAME}{OS\_NAME}}
+{\footnotesize\ttfamily readonly string Code\+Evaluation.\+Code\+Evaluation\+Python.\+OS\+\_\+\+NAME\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_code_evaluation_1_1_code_evaluation_python_ac849be6bd8e370056a40c093fdabd1c1}\label{class_code_evaluation_1_1_code_evaluation_python_ac849be6bd8e370056a40c093fdabd1c1}} 
+\index{CodeEvaluation.CodeEvaluationPython@{CodeEvaluation.CodeEvaluationPython}!pictureAddress@{pictureAddress}}
+\index{pictureAddress@{pictureAddress}!CodeEvaluation.CodeEvaluationPython@{CodeEvaluation.CodeEvaluationPython}}
+\doxysubsubsection{\texorpdfstring{pictureAddress}{pictureAddress}}
+{\footnotesize\ttfamily List$<$string$>$ Code\+Evaluation.\+Code\+Evaluation\+Python.\+picture\+Address = new List$<$string$>$()\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_code_evaluation_1_1_code_evaluation_python_aa456bae03737d2ba00cbd6c693e2c25b}\label{class_code_evaluation_1_1_code_evaluation_python_aa456bae03737d2ba00cbd6c693e2c25b}} 
+\index{CodeEvaluation.CodeEvaluationPython@{CodeEvaluation.CodeEvaluationPython}!textAddress@{textAddress}}
+\index{textAddress@{textAddress}!CodeEvaluation.CodeEvaluationPython@{CodeEvaluation.CodeEvaluationPython}}
+\doxysubsubsection{\texorpdfstring{textAddress}{textAddress}}
+{\footnotesize\ttfamily List$<$string$>$ Code\+Evaluation.\+Code\+Evaluation\+Python.\+text\+Address\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_code_evaluation_1_1_code_evaluation_python_adc54f7df3c02cd3210ed85d79ef5e208}\label{class_code_evaluation_1_1_code_evaluation_python_adc54f7df3c02cd3210ed85d79ef5e208}} 
+\index{CodeEvaluation.CodeEvaluationPython@{CodeEvaluation.CodeEvaluationPython}!TYPE@{TYPE}}
+\index{TYPE@{TYPE}!CodeEvaluation.CodeEvaluationPython@{CodeEvaluation.CodeEvaluationPython}}
+\doxysubsubsection{\texorpdfstring{TYPE}{TYPE}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{namespace_code_evaluation_a2320d15310753a4c248438df6ff62231}{Language}} Code\+Evaluation.\+Code\+Evaluation\+Python.\+TYPE = \mbox{\hyperlink{namespace_code_evaluation_a2320d15310753a4c248438df6ff62231aa7f5f35426b927411fc9231b56382173}{Language.\+Python}}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+\doxysubsection{Property Documentation}
+\mbox{\Hypertarget{class_code_evaluation_1_1_code_evaluation_python_aa973889e5a34035c16eceeb424cc49e7}\label{class_code_evaluation_1_1_code_evaluation_python_aa973889e5a34035c16eceeb424cc49e7}} 
+\index{CodeEvaluation.CodeEvaluationPython@{CodeEvaluation.CodeEvaluationPython}!CodeFolder@{CodeFolder}}
+\index{CodeFolder@{CodeFolder}!CodeEvaluation.CodeEvaluationPython@{CodeEvaluation.CodeEvaluationPython}}
+\doxysubsubsection{\texorpdfstring{CodeFolder}{CodeFolder}}
+{\footnotesize\ttfamily string Code\+Evaluation.\+Code\+Evaluation\+Python.\+Code\+Folder\hspace{0.3cm}{\ttfamily [get]}}
+
+\mbox{\Hypertarget{class_code_evaluation_1_1_code_evaluation_python_a769d9fcdd918220b6afe12153f7f4ce1}\label{class_code_evaluation_1_1_code_evaluation_python_a769d9fcdd918220b6afe12153f7f4ce1}} 
+\index{CodeEvaluation.CodeEvaluationPython@{CodeEvaluation.CodeEvaluationPython}!MainFile@{MainFile}}
+\index{MainFile@{MainFile}!CodeEvaluation.CodeEvaluationPython@{CodeEvaluation.CodeEvaluationPython}}
+\doxysubsubsection{\texorpdfstring{MainFile}{MainFile}}
+{\footnotesize\ttfamily string Code\+Evaluation.\+Code\+Evaluation\+Python.\+Main\+File\hspace{0.3cm}{\ttfamily [get]}}
+
+\mbox{\Hypertarget{class_code_evaluation_1_1_code_evaluation_python_a20bf8a87191ae0f54d80186a0b0bf585}\label{class_code_evaluation_1_1_code_evaluation_python_a20bf8a87191ae0f54d80186a0b0bf585}} 
+\index{CodeEvaluation.CodeEvaluationPython@{CodeEvaluation.CodeEvaluationPython}!OSName@{OSName}}
+\index{OSName@{OSName}!CodeEvaluation.CodeEvaluationPython@{CodeEvaluation.CodeEvaluationPython}}
+\doxysubsubsection{\texorpdfstring{OSName}{OSName}}
+{\footnotesize\ttfamily string Code\+Evaluation.\+Code\+Evaluation\+Python.\+OSName\hspace{0.3cm}{\ttfamily [get]}}
+
+\mbox{\Hypertarget{class_code_evaluation_1_1_code_evaluation_python_a709921ca42aaeaa0a521686660c21c75}\label{class_code_evaluation_1_1_code_evaluation_python_a709921ca42aaeaa0a521686660c21c75}} 
+\index{CodeEvaluation.CodeEvaluationPython@{CodeEvaluation.CodeEvaluationPython}!PictureAddress@{PictureAddress}}
+\index{PictureAddress@{PictureAddress}!CodeEvaluation.CodeEvaluationPython@{CodeEvaluation.CodeEvaluationPython}}
+\doxysubsubsection{\texorpdfstring{PictureAddress}{PictureAddress}}
+{\footnotesize\ttfamily List$<$string$>$ Code\+Evaluation.\+Code\+Evaluation\+Python.\+Picture\+Address\hspace{0.3cm}{\ttfamily [get]}}
+
+\mbox{\Hypertarget{class_code_evaluation_1_1_code_evaluation_python_ab05beb21b4237928497fb73e26ca73a3}\label{class_code_evaluation_1_1_code_evaluation_python_ab05beb21b4237928497fb73e26ca73a3}} 
+\index{CodeEvaluation.CodeEvaluationPython@{CodeEvaluation.CodeEvaluationPython}!TextAddress@{TextAddress}}
+\index{TextAddress@{TextAddress}!CodeEvaluation.CodeEvaluationPython@{CodeEvaluation.CodeEvaluationPython}}
+\doxysubsubsection{\texorpdfstring{TextAddress}{TextAddress}}
+{\footnotesize\ttfamily List$<$string$>$ Code\+Evaluation.\+Code\+Evaluation\+Python.\+Text\+Address\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Code\+Evaluation/\mbox{\hyperlink{_auxiliary_8_code_evaluation_8cs}{Auxiliary.\+Code\+Evaluation.\+cs}}\end{DoxyCompactItemize}
