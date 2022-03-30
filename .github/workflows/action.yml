@@ -5,11 +5,7 @@ on: [push]
 jobs:
 
   build:
-
-    strategy:
-      matrix:
-        configuration: [Debug, Release]
-
+  
     runs-on: windows-latest
 
     steps:
@@ -37,14 +33,10 @@ jobs:
 
     # build
     - name: Build the solution
-      run: msbuild /p:Configuration=$env:Configuration -restore
+      run: dotnet build --configuration Release --no-restore
       working-directory: CodeEvaluationTest/
-      env:
-        Configuration: ${{ matrix.configuration }}
 
     # test
     - name: Execute unit tests
-      run: dotnet test -c $env:Configuration
+      run: dotnet test --no-restore --verbosity normal
       working-directory: CodeEvaluationTest/
-      env:
-        Configuration: ${{ matrix.configuration }}
