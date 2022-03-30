@@ -31,6 +31,11 @@ namespace CodeEvaluation
             return boxName;
         }
 
+        /// <summary>
+        /// Generate table name
+        /// </summary>
+        /// <param name="id">The ID of this table, the internal value is used if no valus is provided</param>
+        /// <returns>The name of the table in PowerPoint</returns>
         public static string GenerateCodeTableName(int? id = null)
         {
             string tableName = "table";
@@ -39,6 +44,12 @@ namespace CodeEvaluation
             return tableName;
         }
 
+        /// <summary>
+        /// Generate text box name for markdown block
+        /// </summary>
+        /// <param name="baseName">The user selection or name from other text boxes, for example, C++_main</param>
+        /// <param name="id">The ID of this text box, the internal value is used if no valus is provided</param>
+        /// <returns>The name of the text (code) box in PowerPoint</returns>
         public static string GenerateCodeBoxNameForMd(string baseName, int? id = null)
         {
             string[] seperate = { "@", "_" };
@@ -132,6 +143,10 @@ namespace CodeEvaluation
             return filename;
         }
 
+        /// <summary>
+        /// Generate a random file name
+        /// </summary>
+        /// <returns>A canonical random filename</returns>
         public static string GenerateRandomName()
         {
             // Leading X ensure that the filename does not begin with a number
@@ -139,7 +154,6 @@ namespace CodeEvaluation
             result += rand.Next(100000).ToString("x") + "_";
             result += rand.Next(10000).ToString("X");
             return result;
-
         }
     }
 }
