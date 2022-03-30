@@ -16,5 +16,7 @@ jobs:
         working-directory: CodeEvaluationTest/
       - name: Build
         run: dotnet build
+        working-directory: CodeEvaluationTest/
       - name: Test with the dotnet CLI
         run: dotnet test
+        working-directory: CodeEvaluationTest/
