@@ -67,7 +67,7 @@ You can then select a parameter table and click the ```Plot Template``` button t
 ### Conversion to ppt with codebox enabled
 
 User can firstly use pandoc to convert Markdown file to PowerPoint file. In order to make addin detect certain language type, the users need to add specific tags for different language codebox (@@code_python for python, @@code_java_main & @@code_java for Java, @@code_cpp_main & @@code_cpp for C++). For example, python code should be marked like this in md files.
- 
+
 ```
 @code_python
 # code content
@@ -78,7 +78,7 @@ Then users can use ```Reformat``` button to remove all existing tags(users can
 
 ## Technical Documentation
 
-For full documentation for the PowerPoint add-in, please go to [Code Evaluation: Geekppt (luowx0905.github.io)](https://luowx0905.github.io/CodeEvaluation_doc/index.html)
+For full documentation for the PowerPoint add-in, please go to https://luowx0905.github.io/CodeEvaluation_doc/index.html
 
 ## License
 
