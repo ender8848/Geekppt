@@ -11,8 +11,7 @@ There are some other folders for unit test. For example, the source files for te
 The folders for unit tests are listed below,
 
 1. RGBColorTest
-2. CodeEvaluationCppTest
-3. CodeEvaluationJavaTest
-4. CodeEvaluationPythonTest
-5. AuxiliaryTest
+2. CodeEvaluationCppnTest
+3. NamingTest
 
+Some other complicated tests related to UI are done manually by both developers and users. 
