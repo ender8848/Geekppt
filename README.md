@@ -20,7 +20,7 @@ In this project, we aim to build a ppt addin called ```Code Evaluation``` that h
 |---------------|-------------|
 |```g++```|C++|
 |```JDK```|Java|
-|```Python```|Python|
+|```Python3```|Python|
 |```Pandoc```|conversion to pptx file|
 
 PowerPoint 2016 or later. 
@@ -31,11 +31,11 @@ Click on a language button to create a codebox. For example, to create a Python 
 
 Currently the addin supports C++, Java and Python. It is worth noting that using C++ and Java requires creating main function and helper functions with different buttons. Before executing main function with multiple helper functions, make sure they are the same language, then choose them all and click ```evaluate``` to get results. 
 
-### add input to you code
+### Add input to you code
 
 Adding inputs can be easy using the ```General Inputs``` button. After creating a input box, choose it with codeboxes that requires input, click ```evaluate``` to get results. 
 
-### graphical output
+### Graphical output
 
 Graphical output can be triggered using ```plt.show()``` in Python. A ```plt.show()``` will result in a figure inserted in current slide. You can use multiple ```plt.show()``` to insert many images. The addin does not support ```plt.show()``` in loops.
 
@@ -58,13 +58,13 @@ ax.legend()
 plt.show()
 ```
 
-### parameter table and plot template
+### Parameter table and plot template
 
 Use ```Parameter Table``` button to generate a parameter table where you can add any row or column and write data into cells. The first row of the table defaults to the table name, which means that it will not be entered as an argument. It would help if you replaced the table name with the appropriate place in the code block to ensure it doesn't go wrong.
 
 You can then select a parameter table and click the ```Plot Template``` button to generate a block of Python code. Using it, you can draw a simple scatter plot (based on the data in the table).
 
-### conversion to ppt with codebox enabled
+### Conversion to ppt with codebox enabled
 
 User can firstly use pandoc to convert Markdown file to PowerPoint file. In order to make addin detect certain language type, the users need to add specific tags for different language codebox (@code_python for python, @code_java_main & @code_java for Java, @code_cpp_main & @code_cpp for C++). For example, python code should be marked like this in md files. 
 ```
