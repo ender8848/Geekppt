@@ -14,6 +14,8 @@ namespace CodeEvaluation
         {
             InitializeComponent();
 
+        
+
             string str1 = Directory.GetCurrentDirectory();
             str1 += Path.DirectorySeparatorChar + "icons" + Path.DirectorySeparatorChar;
             string cpp = str1 + "cpp.png";
@@ -22,23 +24,23 @@ namespace CodeEvaluation
             string evaluation = str1 + "evaluation.png";
             string reformat = str1 + "reformat.png";
             this.cppMain.ShowImage = true;
-            this.cppMain.Image = System.Drawing.Image.FromFile(cpp);
+            this.cppMain.Image = imageList1.Images[0];
             this.cpp.ShowImage = true;
-            this.cpp.Image = System.Drawing.Image.FromFile(cpp);
+            this.cpp.Image = imageList1.Images[0];
             this.javaMain.ShowImage = true;
-            this.javaMain.Image = System.Drawing.Image.FromFile(java);
+            this.javaMain.Image = imageList1.Images[2];
             this.java.ShowImage = true;
-            this.java.Image = System.Drawing.Image.FromFile(java);
+            this.java.Image = imageList1.Images[2];
             this.python.ShowImage = true;
-            this.python.Image = System.Drawing.Image.FromFile(python);
+            this.python.Image = imageList1.Images[3];
             this.evaluateButton.ShowImage = true;
-            this.evaluateButton.Image = System.Drawing.Image.FromFile(evaluation);
+            this.evaluateButton.Image = imageList1.Images[1];
             this.reformatCode.ShowImage = true;
-            this.reformatCode.Image = System.Drawing.Image.FromFile(reformat);
+            this.reformatCode.Image = imageList1.Images[4];
             this.generalInputs.ShowImage = true;
-            this.generalInputs.Image = System.Drawing.Image.FromFile(reformat);
+            this.generalInputs.Image = imageList1.Images[4];
             this.parameterTable.ShowImage = true;
-            this.parameterTable.Image = System.Drawing.Image.FromFile(reformat);
+            this.parameterTable.Image = imageList1.Images[4];
         }
 
         /// <summary> 
@@ -62,7 +64,9 @@ namespace CodeEvaluation
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             Microsoft.Office.Tools.Ribbon.RibbonDialogLauncher ribbonDialogLauncherImpl1 = this.Factory.CreateRibbonDialogLauncher();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Code));
             this.tab1 = this.Factory.CreateRibbonTab();
             this.group1 = this.Factory.CreateRibbonGroup();
             this.cppMain = this.Factory.CreateRibbonButton();
@@ -77,6 +81,7 @@ namespace CodeEvaluation
             this.button1 = this.Factory.CreateRibbonButton();
             this.parameterTable = this.Factory.CreateRibbonButton();
             this.ChangeName = this.Factory.CreateRibbonEditBox();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.tab1.SuspendLayout();
             this.group1.SuspendLayout();
             this.group2.SuspendLayout();
@@ -183,6 +188,16 @@ namespace CodeEvaluation
             this.ChangeName.Text = null;
             this.ChangeName.TextChanged += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.ChangeName_TextChanged);
             // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "cpp.png");
+            this.imageList1.Images.SetKeyName(1, "evaluation.png");
+            this.imageList1.Images.SetKeyName(2, "java.jpg");
+            this.imageList1.Images.SetKeyName(3, "python.png");
+            this.imageList1.Images.SetKeyName(4, "reformat.png");
+            // 
             // Code
             // 
             this.Name = "Code";
@@ -215,6 +230,7 @@ namespace CodeEvaluation
         internal Microsoft.Office.Tools.Ribbon.RibbonButton reformatCode;
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup group2;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton button1;
+        private System.Windows.Forms.ImageList imageList1;
     }
 
     partial class ThisRibbonCollection
